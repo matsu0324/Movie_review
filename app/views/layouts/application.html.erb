@@ -25,7 +25,7 @@
       <div class="navbar-brand">
         <p class="navbar-item">
           <%= link_to root_path do %>
-            <strong class="is-size-3" style="font-family: cursive; color: black;">ramen review</strong>
+            <strong class="is-size-3" style="font-family: cursive; color: black;">movie review</strong>
           <% end %>
         </p>
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -35,11 +35,6 @@
         </a>
       </div>
       <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <%= link_to root_path, class: "navbar-item" do %>
-            映画一覧
-          <% end %>
-        </div>
         <div class="navbar-end">
           <div class="navbar-item">
             <% if user_signed_in? %>
@@ -47,15 +42,30 @@
             <% end %>
             <div class="buttons">
               <% if user_signed_in? %>
+                <%= link_to root_path, class: "button" do %>
+                  Home
+                <% end %>
+                <%= link_to users_path, class: "button" do %>
+                  Users
+                <% end %>
+                <%= link_to movies_path, class: "button" do %>
+                  Movies
+                <% end %>
                 <%= link_to destroy_user_session_path, method: :delete, class: "button" do %>
-                  ログアウト
+                  logout
                 <% end %>
               <% else %>
-                <%= link_to new_user_session_path, class: "button" do %>
-                  ログイン
+                 <%= link_to root_path, class: "button" do %>
+                  Home
                 <% end %>
-                <%= link_to new_user_registration_path, class: "button" do %>
-                  新規登録
+                <%= link_to homes_about_path ,class: "button" do %>
+                  About
+                <% end %>
+                 <%= link_to new_user_registration_path, class: "button" do %>
+                  sign up
+                <% end %>
+                <%= link_to new_user_session_path, class: "button" do %>
+                  Login
                 <% end %>
               <% end %>
             </div>
