@@ -16,8 +16,8 @@ class ReviewsController < ApplicationController
     end
   end
 
-    private
-    def review_params
-      params.require(:review).permit(:movie_id, :score, :conent)
-    end
+  private
+  def review_params
+    params.require(:review).permit(:movie_id, :score, :content)
+  end
 end
